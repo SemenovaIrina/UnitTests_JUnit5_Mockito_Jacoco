@@ -24,7 +24,7 @@ public class LionParameterizedTest {
 
     private Lion lion;
 
-    public static Stream<Arguments> isEvenData() {
+    public static Stream<Arguments> getData() {
         return Stream.of(
                 arguments(SEX[0], true),
                 arguments(SEX[1], false)
@@ -32,7 +32,7 @@ public class LionParameterizedTest {
     }
 
     @ParameterizedTest
-    @MethodSource("isEvenData")
+    @MethodSource("getData")
     public void createLionObjectWithCorrectSex(String sex, boolean result) throws Exception {
         lion = new Lion(sex, feline);
         boolean actual = lion.doesHaveMane();
