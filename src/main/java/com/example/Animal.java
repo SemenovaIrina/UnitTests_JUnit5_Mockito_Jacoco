@@ -2,8 +2,9 @@ package com.example;
 
 import java.util.List;
 
-public class Animal {
+public abstract class Animal implements FelineAnimal {
 
+    @Override //метод интерфейса
     public List<String> getFood(String animalKind) throws Exception {
         if ("Травоядное".equals(animalKind)) {
             return List.of("Трава", "Различные растения");
@@ -17,4 +18,7 @@ public class Animal {
     public String getFamily() {
         return "Существует несколько семейств: заячьи, беличьи, мышиные, кошачьи, псовые, медвежьи, куньи";
     }
+
+    //реализацию метода интерфейса пропишем в наследниках
+    abstract public int getKittens();
 }
